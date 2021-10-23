@@ -1,0 +1,24 @@
+
+.user-profile {
+    max-width: 350px;
+    margin: 50px auto 0 auto;
+    color: blue;
+  }
+  
+  .user-form {
+    display: flex;
+    flex-direction: column;
+  
+  }
+  .form-val {
+    margin-top: 10px;
+  }
+  
+  .leftside, .rightside {
+    float: left;
+    width: 50%;
+  }
+  .display {
+    max-width: 350px;
+    margin: 50px auto 0 auto;
+  }

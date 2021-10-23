@@ -1,0 +1,105 @@
+<div class="row">
+    <div class="leftside">
+  <mat-card class="job-profile">
+    <mat-card-title>Job Profile</mat-card-title>
+    <mat-card-content>
+      <form class="job-form data-form" [formGroup]="form" (ngSubmit)="onSubmit();">
+        <mat-form-field>
+          <input
+          matInput
+          type="text"
+          formControlName="companyName"
+          name="companyName"
+          placeholder="Company Name"/>
+  
+          <mat-error *ngIf="companyName.errors?.required">
+            The company Name is required
+          </mat-error>
+  
+        </mat-form-field>
+          <br>
+          <br>
+        <mat-form-field>
+          <input
+          matInput
+          type="text"
+          formControlName="location"
+          name="location"
+          placeholder="Location" />
+  
+          <mat-error *ngIf="location.errors?.required">
+            The location is required
+          </mat-error>
+  
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field>
+          <input
+          matInput
+          type="text"
+          formControlName="jobTitle"
+          name="jobTitle"
+          placeholder="Job Title" />
+  
+          <mat-error *ngIf="jobTitle.errors?.required">
+            The jobTitle is required
+          </mat-error>
+  
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field>
+          <input
+          matInput
+          type="text"
+          formControlName="salary"
+          name="salary"
+          placeholder="Salary" />
+  
+          <mat-error *ngIf="salary.errors?.required">
+            The salary is required
+          </mat-error>
+  
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field>
+          <input
+          matInput
+          type="text"
+          formControlName="employer"
+          name="employer"
+          placeholder="Employer" />
+  
+          <mat-error *ngIf="employer.errors?.required">
+            The employer is required
+          </mat-error>
+  
+        </mat-form-field>
+        <br>
+        <br>
+  
+        <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="toggleDisplay2()">Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  </div>
+  
+  <div class="rightside">
+    <div *ngIf="isDisplay2" class="display2">
+      <mat-card class="display">
+   <h1>Company Name: {{ companyName.value }}</h1>
+  
+   <h1>Location: {{ location.value }}</h1>
+  
+   <h1>Job Title: {{ jobTitle.value }}</h1>
+  
+   <h1>Salary: {{ salary.value }}</h1>
+  
+   <h1>Employer: {{ employer.value }}</h1>
+      </mat-card>
+  </div>
+  
+  </div>
+  

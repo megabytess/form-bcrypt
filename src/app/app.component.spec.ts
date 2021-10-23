@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'form-bcrypt'`, () => {
+  it(`should have as title 'Form'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('form-bcrypt');
+    expect(app.title).toEqual('Form');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('form-bcrypt app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Form app is running!');
   });
 });

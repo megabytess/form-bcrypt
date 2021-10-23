@@ -1,0 +1,134 @@
+<div class="leftside">
+    <mat-card class="user-profile" style="text-align: center; ">
+    <div >
+      <mat-card-content>
+        <h1>User Profile</h1>
+    
+        <form class="user-form data-form"
+        (ngSubmit)="onSubmit(userProf)"
+        #userProf="ngForm">
+          <div class="form">
+    
+          <mat-form-field>
+            <input
+            matInput type="text"
+            name="firstname"
+            [(ngModel)]="val.firstname"
+            placeholder="FirstName"
+            required
+            #firstname="ngModel"
+            style="height: 30px; width: 300px;" />
+    
+            <mat-error *ngIf="firstname.errors?.required">
+              The FirstName is required
+            </mat-error>
+    
+          </mat-form-field>
+    
+    
+          <br>
+          <br>
+          <mat-form-field>
+            <input
+            matInput
+            type="text"
+            name="lastname"
+            placeholder="LastName"
+            [(ngModel)]="val.lastname"
+            required
+            #lastname="ngModel"
+            style="height: 30px; width: 300px;" />
+    
+            <mat-error *ngIf="lastname.errors?.required">
+              The LastName is required
+            </mat-error>
+    
+          </mat-form-field>
+          <br>
+          <br>
+          <mat-form-field>
+            <input
+            matInput
+            type="text"
+            name="address"
+            placeholder="Address"
+            [(ngModel)]="val.address"
+            required
+            #address="ngModel"
+            style="height: 30px; width: 300px;" />
+    
+            <mat-error *ngIf="address.errors?.required">
+              The Address is required
+            </mat-error>
+    
+          </mat-form-field>
+          <br>
+          <br>
+          <mat-form-field>
+            <input
+            matInput
+            type="text"
+            name="gender"
+            placeholder="Gender"
+            required
+            [(ngModel)]="val.gender"
+            #gender="ngModel"
+            style="height: 30px; width: 300px;" />
+    
+            <mat-error *ngIf="gender.errors?.required">
+              The Gender is required
+            </mat-error>
+    
+          </mat-form-field>
+          <br>
+          <br>
+          <mat-form-field>
+            <input
+            matInput
+            type="password"
+            name="password"
+            [(ngModel)]="val.password"
+            placeholder="Password"
+            required
+            minlength="5"
+            #password="ngModel"
+            style="height: 30px; width: 300px;" />
+    
+            <mat-error *ngIf="password.errors?.required">
+              The Password is required
+            </mat-error>
+    
+            <mat-error *ngIf="password.errors?.minlength">
+              The Password should be atleast 5 characters
+            </mat-error>
+    
+          </mat-form-field>
+          <br>
+          <br>
+          <button mat-raised-button color="primary" (click)="toggleDisplay()" >Login</button>
+        </div>
+        </form>
+      </mat-card-content>
+    </div>
+    </mat-card>
+    </div>
+    
+    <div class="rightside">
+      <div *ngIf="isDisplay" class="display">
+        <mat-card class="display">
+    
+    
+      <h1>First Name: {{ val.firstname }}</h1>
+    
+      <h1>Last Name: {{ val.lastname }}</h1>
+    
+      <h1>Address: {{ val.address }}</h1>
+    
+      <h1>Gender: {{ val.gender }}</h1>
+    
+      <h1>Password: {{ pass }}</h1>
+    
+    
+          </mat-card>
+    </div>
+    </div>
